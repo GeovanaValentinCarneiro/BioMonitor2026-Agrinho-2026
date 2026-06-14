@@ -27,11 +27,17 @@ Apresentar, de forma interativa, como tecnologia, sustentabilidade e produção 
 - `index.html`: estrutura do site
 - `style.css`: estilos visuais e responsividade
 - `script.js`: regras de interação e atualização dinâmica
-- `img/`: imagens utilizadas pelo projeto
+- `img/`: imagens utilizadas no projeto
+- `som/`: sons utilizadas no projeto
 
 ## Créditos e Mídias
 
-As imagens estão armazenadas localmente na pasta `img/` e foram fornecidas junto ao projeto. Antes da submissão final, confirme a origem/licença de cada imagem ou substitua por imagens autorais. Caso alguma imagem tenha sido criada por IA, registre no projeto o prompt utilizado, conforme orientação de originalidade do regulamento.
+Créditos  às imagens armazenadas localmente na pasta `img/`:
+[drone-tecnologia](https://www.magnific.com/br/fotos-gratis/droga-pulverizando-fertilizante-em-plantas-verdes-de-legumes-tecnologia-agricola-automacao-agricola_33210470.htm#fromView=search&page=1&position=0&uuid=e9ac3066-7708-4f1d-b369-2b7f003e8ef4&query=drones+agricolas)
+
+
+
+ Antes da submissão final, confirme a origem/licença de cada imagem ou substitua por imagens autorais. Caso alguma imagem tenha sido criada por IA, registre no projeto o prompt utilizado, conforme orientação de originalidade do regulamento.
 
 ## Observação para Publicação
 
