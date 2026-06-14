@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Metadados e arquivos principais do projeto -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BioMonitor 2026: projeto Front-End do Agrinho sobre tecnologia, sustentabilidade e agricultura no Paraná.">
+    <title>BioMonitor 2026 | Agrinho Front-End</title>
+    <link rel="icon" type="image/png" href="img/tomatinho.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- Cabeçalho fixo com navegação e alternância de tema -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Navegação principal">
+            <a class="brand" href="#hero" aria-label="Ir para o início do BioMonitor">
+                <span>BioMonitor 2026</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                <span class="menu-line" aria-hidden="true"></span>
+                <span class="menu-line" aria-hidden="true"></span>
+                <span class="menu-line" aria-hidden="true"></span>
+                <span class="sr-only">Abrir menu</span>
+            </button>
+
+            <div class="nav-panel" id="primary-menu">
+                <a href="#monitor">Monitor</a>
+                <a href="#ecossistema">Ecossistema</a>
+                <a href="#parana">Paraná</a>
+                <a href="#desafios">Desafios</a>
+                <a href="#referencias">Fontes</a>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="Alternar tema claro e escuro">
+                    <span id="themeIcon" aria-hidden="true">☼</span>
+                    <span class="sr-only">Alternar tema claro e escuro</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="conteudo">
+        <!-- Apresentação principal do BioMonitor -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero-media" aria-hidden="true"></div>
+            <div class="hero-edge-text hero-edge-left" aria-hidden="true">Campo <span>•</span> Tecnologia</div>
+            <div class="hero-edge-text hero-edge-right" aria-hidden="true">Natureza <span>•</span> Inovação</div>
+            <div class="hero-edge-text hero-edge-bottom" aria-hidden="true">Produzir <span>•</span> Preservar <span>•</span> Conectar</div>
+            <div class="hero-content">
+                <h1 id="hero-title">BioMonitor 2026</h1>
+                <p class="hero-lead">
+                    Uma experiência interativa sobre como tecnologia, dados e cuidado ambiental ajudam a produzir melhor sem avançar sobre a natureza.
+                </p>
+                <div class="hero-actions" aria-label="Ações principais">
+                    <a class="button button-primary" href="#monitor">Explorar biomas</a>
+                    <a class="button button-secondary" href="#parana">Ver Paraná</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pilares que conectam agricultura e preservação -->
+        <section class="section" id="ecossistema" aria-labelledby="ecossistema-title">
+            <div class="section-heading">
+                <p class="eyebrow">Conexões vitais</p>
+                <h2 id="ecossistema-title">O ecossistema do agro</h2>
+                <p>Clique em um pilar para ver como campo, tecnologia e preservação dependem um do outro.</p>
+            </div>
+
+            <div class="pillar-grid">
+                <button class="pillar-card" type="button" data-card="solo">
+                    <span class="card-icon icon-soil" aria-hidden="true">S</span>
+                    <strong>Solo vivo</strong>
+                    <span>A base para fertilidade, microbiologia e produtividade sem esgotar a terra.</span>
+                </button>
+                <button class="pillar-card" type="button" data-card="agua">
+                    <span class="card-icon icon-water" aria-hidden="true">A</span>
+                    <strong>Água eficiente</strong>
+                    <span>Irrigação de precisão para reduzir desperdício e proteger nascentes.</span>
+                </button>
+                <button class="pillar-card" type="button" data-card="biodiversidade">
+                    <span class="card-icon icon-bio" aria-hidden="true">B</span>
+                    <strong>Biodiversidade</strong>
+                    <span>Corredores ecológicos, polinizadores e controle natural de pragas.</span>
+                </button>
+                <button class="pillar-card" type="button" data-card="clima">
+                    <span class="card-icon icon-climate" aria-hidden="true">C</span>
+                    <strong>Clima local</strong>
+                    <span>Dados de clima e sensores ajudam o produtor a decidir antes da perda.</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Monitor interativo dos biomas brasileiros -->
+        <section class="section monitor-section" id="monitor" aria-labelledby="monitor-title">
+            <div class="section-heading">
+                <p class="eyebrow">Monitor interativo</p>
+                <h2 id="monitor-title">Biomas e produção sustentável</h2>
+                <p>Selecione um bioma no mapa ou na lista para comparar tecnologias aplicadas ao agro.</p>
+            </div>
+
+            <div class="monitor-layout">
+                <article class="panel map-panel" aria-label="Mapa simplificado dos biomas brasileiros">
+                    <div class="panel-title-row">
+                        <h3>Mapa de biomas</h3>
+                        <button class="icon-button" id="openMapModalBtn" type="button" aria-label="Abrir mapa de localização">
+                            <span aria-hidden="true">⌖</span>
+                        </button>
+                    </div>
+
+                    <div class="legend" aria-label="Legenda dos biomas">
+                        <button type="button" data-biome-button="amazonia"><span class="dot dot-amazonia"></span>Amazônia</button>
+                        <button type="button" data-biome-button="cerrado"><span class="dot dot-cerrado"></span>Cerrado</button>
+                        <button type="button" data-biome-button="pantanal"><span class="dot dot-pantanal"></span>Pantanal</button>
+                        <button type="button" data-biome-button="caatinga"><span class="dot dot-caatinga"></span>Caatinga</button>
+                        <button type="button" data-biome-button="mata_atlantica"><span class="dot dot-mata"></span>Mata Atlântica</button>
+                        <button type="button" data-biome-button="pampa"><span class="dot dot-pampa"></span>Pampa</button>
+                    </div>
+
+                    <svg class="biome-map" viewBox="250 180 250 250" role="img" aria-labelledby="biome-map-title">
+                        <title id="biome-map-title">Mapa simplificado do Brasil dividido por biomas</title>
+                        <path class="biome-path" data-biome="amazonia" d="M300.8,235.6 L297,252.7 L281.1,257.6 L277.3,272.2 L288.8,281.1 L294,278.6 L298,285.2 L309.4,286.7 L320,280.3 L321.7,290.1 L346.1,300.4 L347.4,311.1 L357.6,312.3 L360.8,308.3 L368.5,292.9 L378.5,298.3 L390,291.9 L391.3,286.8 L408.3,258.9 L417.9,256.7 L425.1,242.8 L411.1,232.9 L397.4,230.3 L389.7,211.1 L381.5,220 L365.7,219.2 L353.8,224.7 L347.4,219.6 L346.1,206 L337.1,211.5 L325.6,211.5 L324.7,211.9 L330.3,220.5 L320.5,227.7 L308.9,222.2 L298,225.6 Z"></path>
+                        <path class="biome-path" data-biome="cerrado" d="M436.2,244.7 L425.2,243.1 L418.2,257 L408.3,258.9 L391.3,287.5 L389.4,292.9 L377.6,297.6 L368.5,292.9 L360.8,308.3 L369.8,308.9 L374.6,317.3 L370.1,330.4 L362.8,328.5 L363.4,336.2 L360.5,338.4 L369.4,342 L370.9,346.4 L370.7,347 L373,337.1 L384.2,339.4 L395.6,327.3 L418.2,332.6 L429,325.9 L429.1,326.6 L428.6,322.7 L434.9,317.8 L435.3,305.5 L427.2,310.8 L427.5,310.5 L423.7,291.3 L427.1,271.4 L437.8,263.4 L439.7,258 L436.1,244.9 Z"></path>
+                        <path class="biome-path" data-biome="pantanal" d="M356.8,311.9 L360.6,320.9 L357.6,338 L360.6,338.3 L360.5,338.4 L363.4,336.2 L363.4,329.1 L362.8,328.5 L370.8,330.4 L374.6,317.3 L369.8,308.9 L360.8,308.6 L358,313.4 Z"></path>
+                        <path class="biome-path" data-biome="caatinga" d="M469.7,256.8 L445.7,246.2 L436.8,245.3 L436.2,245 L439.6,258.6 L439.7,258 L437.8,263.8 L437.8,263.5 L427.2,271.8 L427.1,271.5 L423.4,292 L423.7,291.3 L427.6,310.5 L427.2,310.9 L435.6,305.4 L435.6,306.1 L445.2,300.6 L445.1,300.7 L448.4,292.3 L448.1,292.9 L469.2,270.8 L468.8,270.8 L469.9,256.7 Z"></path>
+                        <path class="biome-path" data-biome="mata_atlantica" d="M371.4,344.7 L372.4,350.6 L371.8,350 L381.3,363.8 L381.6,363.2 L376.7,367 L384.3,368.3 L384.9,367.6 L378.5,374.7 L395.8,375 L402.2,370.1 L405,359.5 L418.6,347.4 L438.5,343.6 L450.7,322.2 L452.1,298.3 L473.1,271.8 L470.1,256.4 L468.8,270.8 L448.1,292.9 L445.1,300.7 L435.6,306.1 L434.9,317.8 L428.6,322.8 L429.2,326.6 L417.3,332.6 L395.5,327.1 L384.3,339.4 L373.1,337.2 L370.8,347 Z"></path>
+                        <path class="biome-path" data-biome="pampa" d="M376.6,367.2 L363.5,377.4 L385.5,390.2 L397.9,375.7 L378.2,374.7 L384.9,367.6 L375.9,367.3 Z"></path>
+                        <g class="biome-outline-layer" aria-hidden="true"></g>
+                    </svg>
+
+                </article>
+
+                <article class="panel biome-detail" aria-live="polite">
+                    <p class="detail-placeholder" id="placeholderMsg">Selecione um bioma para analisar dados de produção, tecnologia e conservação.</p>
+                    <div class="detail-content is-hidden" id="contentArea">
+                        <div>
+                            <p class="eyebrow">Status do ecossistema</p>
+                            <h3 id="bName"></h3>
+                        </div>
+                        <div class="detail-box">
+                            <strong>Produção sustentável</strong>
+                            <p id="bProd"></p>
+                        </div>
+                        <div class="detail-box">
+                            <strong>Tecnologia aplicada</strong>
+                            <p id="bCons"></p>
+                        </div>
+                        <div class="score-row">
+                            <span>Índice bio-digital</span>
+                            <strong id="susVal">0%</strong>
+                        </div>
+                        <div class="progress-bar" aria-hidden="true">
+                            <span id="susFill"></span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Relação entre tecnologia, produção e conservação -->
+        <section class="section split-section" id="equilibrio" aria-labelledby="equilibrio-title">
+            <div class="section-heading">
+                <p class="eyebrow">Produção e conservação</p>
+                <h2 id="equilibrio-title">Tecnologia como ponte entre campo e natureza</h2>
+            </div>
+            <div class="split-grid">
+                <div>
+                    <h3>Interdependência direta</h3>
+                    <p>O agro moderno depende de recursos naturais intactos: solo saudável, chuva regular, água limpa e polinizadores. Preservar é uma estratégia produtiva, não um obstáculo.</p>
+                </div>
+                <figure>
+                    <img src="img/equilibrio 2.jpg" alt="Plantio monitorado por celular ao lado de área verde preservada">
+                </figure>
+                <figure>
+                    <img src="img/drone-tecnologia.png" alt="Drones aplicando tecnologia em área agrícola">
+                </figure>
+                <div>
+                    <h3>Intensificação inteligente</h3>
+                    <p>Quando sensores, mapas e manejo integrado aumentam a produtividade por hectare, diminui a pressão para abrir novas áreas e aumenta a chance de recuperar paisagens.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnologias aplicáveis à rotina do produtor rural -->
+        <section class="section" id="solucoes" aria-labelledby="solucoes-title">
+            <div class="section-heading">
+                <p class="eyebrow">Inteligência operacional</p>
+                <h2 id="solucoes-title">Soluções para o produtor rural</h2>
+            </div>
+            <div class="solution-grid">
+                <article class="info-card accent-blue">
+                    <h3>Monitoramento por drones</h3>
+                    <p>Imagens aéreas ajudam a identificar falhas de plantio, estresse hídrico e focos de pragas antes que o prejuízo cresça.</p>
+                </article>
+                <article class="info-card accent-amber">
+                    <h3>Sistemas integrados</h3>
+                    <p>ILPF combina lavoura, pecuária e floresta para diversificar renda, proteger o solo e reduzir emissões.</p>
+                </article>
+                <article class="info-card accent-green">
+                    <h3>Bioinsumos</h3>
+                    <p>Microrganismos benéficos e controle biológico reduzem dependência de químicos e fortalecem a vida do solo.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Mapa regional e soluções sustentáveis do Paraná -->
+        <section class="section parana-section" id="parana" aria-labelledby="parana-title">
+            <div class="section-heading">
+                <p class="eyebrow">Paraná em foco</p>
+                <div class="parana-heading-row">
+                    <h2 id="parana-title">Tecnologia sustentável no campo paranaense</h2>
+                    <p>Escolha um ponto no mapa para conhecer vocações produtivas e soluções sustentáveis de diferentes regiões do estado.</p>
+                </div>
+            </div>
+
+            <div class="parana-layout">
+                <div class="parana-map" aria-label="Mapa do Paraná com divisões municipais">
+                    <img class="parana-svg" src="img/mapa-parana.svg" alt="Mapa detalhado do Paraná com divisões municipais">
+                    <button class="region-marker marker-oeste" data-region="oeste" type="button" aria-label="Conhecer o Oeste do Paraná">
+                        <span class="marker-number" aria-hidden="true">1</span>
+                        <span class="marker-label">Oeste</span>
+                    </button>
+                    <button class="region-marker marker-norte" data-region="norte" type="button" aria-label="Conhecer o Norte do Paraná">
+                        <span class="marker-number" aria-hidden="true">2</span>
+                        <span class="marker-label">Norte</span>
+                    </button>
+                    <button class="region-marker marker-campos" data-region="campos" type="button" aria-label="Conhecer os Campos Gerais">
+                        <span class="marker-number" aria-hidden="true">3</span>
+                        <span class="marker-label">Campos Gerais</span>
+                    </button>
+                    <button class="region-marker marker-litoral" data-region="litoral" type="button" aria-label="Conhecer o Litoral e a Serra do Mar">
+                        <span class="marker-number" aria-hidden="true">4</span>
+                        <span class="marker-label">Litoral</span>
+                    </button>
+                </div>
+
+                <article class="panel region-detail" aria-live="polite">
+                    <p class="eyebrow">Território selecionado</p>
+                    <h3 id="regionName">Oeste produtivo</h3>
+                    <p class="region-focus" id="regionFocus">Biogás, cooperativismo e rastreabilidade</p>
+                    <p id="regionText">A integração entre grãos e produção animal cria oportunidades para transformar resíduos em energia e melhorar o controle da cadeia produtiva.</p>
+                    <h4>Soluções em destaque</h4>
+                    <ul id="regionList">
+                        <li>Biodigestores e geração de energia renovável.</li>
+                        <li>Sensores para uso eficiente de água e ração.</li>
+                        <li>Rastreabilidade entre propriedade, cooperativa e consumidor.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Desafios sociais, conectividade e cumprimento da lei -->
+        <section class="section split-section" id="desafios" aria-labelledby="desafios-title">
+            <div class="split-grid challenge-grid">
+                <figure>
+                    <img src="img/fazendeiro.png" alt="Produtor rural em ambiente agrícola">
+                </figure>
+                <div>
+                    <p class="eyebrow">Justiça social e lei</p>
+                    <h2 id="desafios-title">Inclusão, conectividade e legalidade</h2>
+                    <div class="stacked-card">
+                        <h3>Pequeno produtor</h3>
+                        <p>A tecnologia precisa chegar com assistência técnica, crédito e linguagem simples para também fortalecer a agricultura familiar.</p>
+                    </div>
+                    <div class="stacked-card">
+                        <h3>Combate à ilegalidade</h3>
+                        <p>Fiscalizar e rastrear cadeias produtivas ajuda a separar o produtor correto de práticas como desmatamento ilegal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Indicadores didáticos apresentados com contadores -->
+        <section class="section impact-section" id="impacto" aria-labelledby="impacto-title">
+            <div class="section-heading">
+                <p class="eyebrow">Indicadores didáticos</p>
+                <h2 id="impacto-title">Impacto da tese bio-digital</h2>
+            </div>
+            <div class="impact-grid">
+                <article>
+                    <strong class="counter" data-target="45">0</strong>
+                    <span>% de economia potencial de água</span>
+                </article>
+                <article>
+                    <strong class="counter" data-target="60">0</strong>
+                    <span>% de redução no uso de defensivos</span>
+                </article>
+                <article>
+                    <strong class="counter" data-target="4">0</strong>
+                    <span>frentes integradas de decisão</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Evolução das tecnologias utilizadas no campo -->
+        <section class="section timeline-section" id="evolucao" aria-labelledby="evolucao-title">
+            <div class="section-heading">
+                <p class="eyebrow">Jornada da inovação</p>
+                <h2 id="evolucao-title">Do manejo manual ao ecossistema conectado</h2>
+            </div>
+            <div class="timeline-scroll" tabindex="0" aria-label="Linha do tempo da inovação no campo">
+                <ol class="timeline">
+                    <li>
+                        <span>Passado</span>
+                        <h3>Observação manual</h3>
+                        <p>Decisões tomadas quase só pela experiência e pelo clima aparente.</p>
+                    </li>
+                    <li>
+                        <span>2026</span>
+                        <h3>Dados no campo</h3>
+                        <p>Drones, sensores e painéis ajudam a reduzir desperdício e antecipar problemas.</p>
+                    </li>
+                    <li>
+                        <span>2030+</span>
+                        <h3>Regeneração guiada</h3>
+                        <p>Áreas produtivas e áreas preservadas podem ser planejadas como um sistema único.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Fontes utilizadas para pesquisa e aprofundamento -->
+        <section class="section references-section" id="referencias" aria-labelledby="referencias-title">
+            <div class="section-heading">
+                <h2 id="referencias-title">Fontes</h2>
+            </div>
+            <div class="reference-grid">
+                <a href="https://www.embrapa.br" target="_blank" rel="noopener">Embrapa</a>
+                <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm" target="_blank" rel="noopener">Código Florestal</a>
+                <a href="https://www.redeilpf.org.br" target="_blank" rel="noopener">Rede ILPF</a>
+                <a href="https://www.gov.br/agricultura/pt-br" target="_blank" rel="noopener">Ministério da Agricultura</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal com informações detalhadas dos pilares -->
+    <div class="modal is-hidden" id="agroCardModal" role="dialog" aria-modal="true" aria-labelledby="agroModalTitle">
+        <div class="modal-box">
+            <button class="modal-close" type="button" data-close-modal="agroCardModal" aria-label="Fechar informações">×</button>
+            <h2 id="agroModalTitle"></h2>
+            <p id="agroModalText"></p>
+        </div>
+    </div>
+
+    <!-- Modal do mapa simbólico de localização -->
+    <div class="modal is-hidden" id="locationModal" role="dialog" aria-modal="true" aria-labelledby="locationTitle">
+        <div class="modal-box modal-map-box">
+            <button class="modal-close" id="closeMapModalBtn" type="button" aria-label="Fechar mapa">×</button>
+            <h2 id="locationTitle">Onde você mora?</h2>
+            <p>Clique em um ponto do mapa para marcar sua localização simbólica no ecossistema.</p>
+            <div class="location-map-wrapper" id="modalMapWrapper">
+                <svg class="biome-map colored-map" viewBox="250 180 250 250" role="img" aria-label="Mapa simplificado do Brasil para marcar localização">
+                    <path class="biome-path" data-biome="amazonia" d="M300.8,235.6 L297,252.7 L281.1,257.6 L277.3,272.2 L288.8,281.1 L294,278.6 L298,285.2 L309.4,286.7 L320,280.3 L321.7,290.1 L346.1,300.4 L347.4,311.1 L357.6,312.3 L360.8,308.3 L368.5,292.9 L378.5,298.3 L390,291.9 L391.3,286.8 L408.3,258.9 L417.9,256.7 L425.1,242.8 L411.1,232.9 L397.4,230.3 L389.7,211.1 L381.5,220 L365.7,219.2 L353.8,224.7 L347.4,219.6 L346.1,206 L337.1,211.5 L325.6,211.5 L324.7,211.9 L330.3,220.5 L320.5,227.7 L308.9,222.2 L298,225.6 Z"></path>
+                    <path class="biome-path" data-biome="cerrado" d="M436.2,244.7 L425.2,243.1 L418.2,257 L408.3,258.9 L391.3,287.5 L389.4,292.9 L377.6,297.6 L368.5,292.9 L360.8,308.3 L369.8,308.9 L374.6,317.3 L370.1,330.4 L362.8,328.5 L363.4,336.2 L360.5,338.4 L369.4,342 L370.9,346.4 L370.7,347 L373,337.1 L384.2,339.4 L395.6,327.3 L418.2,332.6 L429,325.9 L429.1,326.6 L428.6,322.7 L434.9,317.8 L435.3,305.5 L427.2,310.8 L427.5,310.5 L423.7,291.3 L427.1,271.4 L437.8,263.4 L439.7,258 L436.1,244.9 Z"></path>
+                    <path class="biome-path" data-biome="pantanal" d="M356.8,311.9 L360.6,320.9 L357.6,338 L360.6,338.3 L360.5,338.4 L363.4,336.2 L363.4,329.1 L362.8,328.5 L370.8,330.4 L374.6,317.3 L369.8,308.9 L360.8,308.6 L358,313.4 Z"></path>
+                    <path class="biome-path" data-biome="caatinga" d="M469.7,256.8 L445.7,246.2 L436.8,245.3 L436.2,245 L439.6,258.6 L439.7,258 L437.8,263.8 L437.8,263.5 L427.2,271.8 L427.1,271.5 L423.4,292 L423.7,291.3 L427.6,310.5 L427.2,310.9 L435.6,305.4 L435.6,306.1 L445.2,300.6 L445.1,300.7 L448.4,292.3 L448.1,292.9 L469.2,270.8 L468.8,270.8 L469.9,256.7 Z"></path>
+                    <path class="biome-path" data-biome="mata_atlantica" d="M371.4,344.7 L372.4,350.6 L371.8,350 L381.3,363.8 L381.6,363.2 L376.7,367 L384.3,368.3 L384.9,367.6 L378.5,374.7 L395.8,375 L402.2,370.1 L405,359.5 L418.6,347.4 L438.5,343.6 L450.7,322.2 L452.1,298.3 L473.1,271.8 L470.1,256.4 L468.8,270.8 L448.1,292.9 L445.1,300.7 L435.6,306.1 L434.9,317.8 L428.6,322.8 L429.2,326.6 L417.3,332.6 L395.5,327.1 L384.3,339.4 L373.1,337.2 L370.8,347 Z"></path>
+                    <path class="biome-path" data-biome="pampa" d="M376.6,367.2 L363.5,377.4 L385.5,390.2 L397.9,375.7 L378.2,374.7 L384.9,367.6 L375.9,367.3 Z"></path>
+                </svg>
+                <div class="pin-container" id="pinContainer" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recursos globais de interação -->
+    <button class="back-to-top is-hidden" id="backToTop" type="button" aria-label="Voltar ao topo">↑</button>
+    <audio id="clickSound" src="som/click.mp3" preload="auto" aria-hidden="true"></audio>
+
+    <!-- Rodapé com navegação, informações do projeto e autoria -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="footer-brand-mark" href="#hero" aria-label="Voltar ao início do BioMonitor">
+                        BioMonitor <span>2026</span>
+                    </a>
+                    <p>Uma experiência sobre tecnologia, sustentabilidade e cuidado ambiental no campo.</p>
+                    <a class="footer-home-link" href="#hero">Voltar ao início <span aria-hidden="true">↑</span></a>
+                </div>
+
+                <nav class="footer-column footer-explore" aria-label="Links do projeto">
+                    <h2>Explorar</h2>
+                    <a href="#monitor">Monitor de biomas</a>
+                    <a href="#ecossistema">Ecossistema do agro</a>
+                    <a href="#parana">Paraná em foco</a>
+                    <a href="#desafios">Desafios</a>
+                    <a href="#referencias">Fontes</a>
+                </nav>
+
+                <div class="footer-column footer-project">
+                    <h2>Projeto</h2>
+                    <p>Agrinho 2026</p>
+                    <p>Programação Front-End</p>
+                    <p>HTML, CSS e JavaScript</p>
+                    <p>Sustentabilidade e campo</p>
+                </div>
+
+                <div class="footer-column footer-author-column">
+                    <h2>Autoria</h2>
+                    <p class="footer-author">Feito por <strong>Geovana Valentin Carneiro</strong></p>
+                    <a class="footer-github" href="https://github.com/GeovanaValentinCarneiro/BioMonitor2026-Agrinho-2026" target="_blank" rel="noopener">
+                        GitHub <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>BioMonitor 2026 · Projeto educacional para o Agrinho</p>
+                <p>Programação Front-End</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
