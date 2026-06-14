@@ -79,7 +79,7 @@ Inserir efeitos sonoros nos elementos clicáveis.
 
 Organizar e comentar os arquivos HTML, CSS e JavaScript.
 
-Remover frameworks, bibliotecas externas e códigos inline para seguir as regras do Agrinho.
+
 
 
 
