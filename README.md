@@ -53,15 +53,33 @@ Efeitos Sonoros:
 [click](https://pixabay.com/pt/sound-effects/filme-e-efeitos-especiais-computer-mouse-click-02-383961/)
 
 
- Auxilio de IA (Chat GPT e Gemini) para organização dos códigos, correções de erros, revisão dos códigos e apoio para o desenvolvimento da programação. Prompts utilizados: 
+ Auxilio de IA (*Chat GPT e Gemini*) para organização dos códigos, correções de erros, revisão dos códigos e apoio para o desenvolvimento da programação. Prompts utilizados: 
 
-Crie um site com o tema: "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente", com as linguagens: Java Script, CSS e HTML; 
+Criar um site Front-End para o Agrinho 2026 usando somente HTML, CSS e JavaScript. 
 
-Crie um mapa do brasil para monitorar a produção em cada bioma;
+Desenvolver o BioMonitor com foco em agro, tecnologia e sustentabilidade.
 
-Crie um mapa do Paraná para monitorar a produção nas regiões do estado;
+Criar um monitor interativo dos biomas brasileiros.
 
-Prompts para melhoria de acessibilidade, fluidez e adaptação para difernetes dispositivos;
+Adicionar mapa do Paraná com regiões e informações sustentáveis.
+
+Criar modo claro e escuro responsivo.
+
+Adicionar cartões, modais, animações, contadores e linha do tempo.
+
+Criar minimapa para marcação simbólica da localização.
+
+Melhorar cores, tipografia, transições e acessibilidade.
+
+Adaptar o site para computadores, tablets e celulares.
+
+Adicionar fontes de pesquisa, autoria, GitHub e rodapé informativo.
+
+Inserir efeitos sonoros nos elementos clicáveis.
+
+Organizar e comentar os arquivos HTML, CSS e JavaScript.
+
+Remover frameworks, bibliotecas externas e códigos inline para seguir as regras do Agrinho.
 
 
 
