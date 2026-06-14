@@ -79,9 +79,15 @@ Inserir efeitos sonoros nos elementos clicáveis.
 
 Organizar e comentar os arquivos HTML, CSS e JavaScript.
 
+Créditos as fontes utilizadas no site: 
 
+[Embrapa](https://www.embrapa.br/)
 
+[Código Florestal](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm)
 
+[Rede ILPF](https://redeilpf.org.br/)
+
+[Ministério da Agricultura](https://www.gov.br/agricultura/pt-br)
 
 
 
